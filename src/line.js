@@ -17,6 +17,7 @@ module.exports = function(Chart) {
 			ctx.moveTo(view.x1, view.y1);
 			ctx.lineTo(view.x2, view.y2);
 			ctx.stroke();
+			ctx.setLineDash([5,10])
 		}
 	});
 
@@ -33,8 +34,8 @@ module.exports = function(Chart) {
 				model.x2 = chartArea.right;
 				model.y1 = model.y2 = pixel;
 			} else {
-				model.y1 = chartArea.top;
-				model.y2 = chartArea.bottom;
+				model.y1 = chartArea.top + options.topOffset;
+				model.y2 = chartArea.bottom + options.bottomOffset;
 				model.x1 = model.x2 = pixel;
 			}
 		}
