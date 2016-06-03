@@ -24,7 +24,7 @@ module.exports = function(Chart) {
 		var model = obj._model = obj._model || {};
 
 		var scale = chartInstance.scales[options.scaleID];
-		var pixel = scale ? scale.getPixelForValue(options.value) : NaN;
+		var pixel = scale ? scale.getPixelForValue(options.value) : scale.getPixelForTick(options.value);
 		var chartArea = chartInstance.chartArea;
 
 		if (!isNaN(pixel)) {
